@@ -1,9 +1,13 @@
 import pytest
 from inventory import add_item, remove_item, get_item_count
 
-def test_add_item(empty_inventory):
+def test_add_item_basic(empty_inventory):
     result = add_item(empty_inventory, "sword")
     assert "sword" in result ["items"]
+
+def test_add_item_full_inventory(full_inventory):
+    with pytest.raises(ValueError):
+        add_item(full_inventory,"sword")
 
 def test_remove_item():
     pass
