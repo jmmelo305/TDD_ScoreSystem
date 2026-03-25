@@ -8,4 +8,3 @@ def heal(health, amount):
 
 def is_alive(health):
     return health > 0
-    
