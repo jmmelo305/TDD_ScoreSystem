@@ -8,10 +8,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      # Step 1: Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
-      - run: pip install pytest pytest-cov flake8
-      - run: pytest --cov=. --cov-fail-under=85
-      - run: flake8 .
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install pytest pytest-cov flake8
+
+      # Step 4: Run tests with coverage enforcement
+      - name: Run pytest with coverage
+        run: |
+          pytest --cov=. --cov-fail-under=85
+
+      # Step 5: Run flake8 linting
+      - name: Run flake8
+        run: |
+          flake8 .
