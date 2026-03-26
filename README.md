@@ -1,3 +1,5 @@
+[![CI Pipeline](https://github.com/jmmelo305/TDD_ScoreSystem/actions/workflows/tests.yml/badge.svg)](https://github.com/jmmelo305/TDD_ScoreSystem/actions/workflows/tests.yml)
+
 # TDD_ScoreSystem
 
 ## Date: 3/4/2026
